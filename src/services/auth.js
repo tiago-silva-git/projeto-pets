@@ -1,3 +1,7 @@
 import axios from "axios";
 
-export const login = (data) => axios.post("https://reqres.in/api/login", data);
+export const login = (data) =>
+  axios.post(
+    "https://otterwise-fake-api.herokuapp.com/login/authenticate",
+    data
+  );

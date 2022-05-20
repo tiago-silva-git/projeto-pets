@@ -1,23 +1,45 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import AuthStatus from "./AuthStatus";
+import styled from "styled-components";
 
 export default function Layout() {
   return (
-    <div>
+    <Nav>
       <AuthStatus />
-      <ul>
-        <li>
+      <List>
+        <Links>
           <Link to="/">Rota Pública</Link>
-        </li>
-        <li>
+        </Links>
+        <Links>
           <Link to="/private-page">Rota Privada</Link>
-        </li>
-        <li>
+        </Links>
+        <Links>
           <Link to="/login">Login</Link>
-        </li>
-      </ul>
+        </Links>
+      </List>
       <Outlet />
-    </div>
+    </Nav>
   );
 }
+
+const Nav = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  font-family: sans-serif;
+`;
+
+const List = styled.ul`
+  width: 200px;
+  margin: 0 auto;
+  padding: 0;
+`;
+
+const Links = styled.li`
+  display: block;
+  margin: 5px;
+  background-color: #1ddbcf;
+  border-radius: 5px;
+`;
