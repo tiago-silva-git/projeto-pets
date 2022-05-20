@@ -31,7 +31,11 @@ export default function ProtectedPage() {
         </Fields>
         <Fields>
           Especie:
-          <input type="number" name="especie" />
+          <select name="especie" required>
+            <option selected value="none"></option>
+            <option value="Female">Cachorro</option>
+            <option value="Male">Gato</option>
+          </select>
         </Fields>
         <Fields>
           Gênero:
