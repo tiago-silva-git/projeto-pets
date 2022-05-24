@@ -26,7 +26,7 @@ export default function Login() {
 
   return (
     <div>
-      <Title>Login</Title>
+      <Title>ENTRAR</Title>
       <form onSubmit={handleSubmit}>
         <Fields>
           E-mail:
@@ -45,6 +45,7 @@ export default function Login() {
 const Title = styled.h3`
   margin: 5px;
   font-size: 18px;
+  color: #1ddbcf;
 `;
 
 const Fields = styled.label`

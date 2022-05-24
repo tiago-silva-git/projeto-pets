@@ -32,14 +32,20 @@ const Nav = styled.div`
 `;
 
 const List = styled.ul`
-  width: 200px;
-  margin: 0 auto;
   padding: 0;
 `;
 
 const Links = styled.li`
   display: block;
-  margin: 5px;
+  margin: 5px auto;
+  padding: 5px;
   background-color: #1ddbcf;
   border-radius: 5px;
+  width: 300px;
+  box-shadow: 2px 1px 1px black;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 `;
