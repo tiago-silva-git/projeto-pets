@@ -29,7 +29,9 @@ const Button = styled.button`
   display: flex;
   margin-left: auto;
   color: #5582fa;
+  font-size: 17px;
   background-color: white;
   border-radius: 4px;
   border-color: #5582fa;
+  padding: 5px 30px;
 `;

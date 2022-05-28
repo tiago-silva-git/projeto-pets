@@ -1,22 +1,52 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { listPets } from "../services/pets";
 import styled from "styled-components";
 
 export default function ProtectedPage() {
+  const [state, setState] = useState("...");
+
   useEffect(() => {
     const request = async () => {
       const response = await listPets();
-      console.log(response);
+      const array = response.data.pets;
+
+      setState(
+        array.map((elem) => (
+          <p>{`Especie: ${elem.species} | Nome: ${elem.name} | Idade: ${elem.age} | Raça: ${elem.breed} | Gênero: ${elem.gender}`}</p>
+        ))
+      );
     };
 
     request();
-  });
+  }, []);
+
+  const registerSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("nome");
+    const breed = formData.get("raca");
+    const age = formData.get("idade");
+    const species = formData.get("especie");
+    const gender = formData.get("genero");
+    const photoPet = formData.get("foto");
+
+    const dataRegister = {
+      name,
+      breed,
+      age,
+      species,
+      gender,
+      photoPet,
+    };
+
+    console.log(dataRegister);
+  };
 
   return (
     <>
       <Title>CADASTRE SEU PET</Title>
-      <Form onSubmit={""}>
+      <Form onSubmit={registerSubmit}>
         <Labels>
           Nome:
           <Fields
@@ -43,15 +73,15 @@ export default function ProtectedPage() {
           <Labels>
             Especie:
             <Select name="especie" required>
-              <option selected value="none"></option>
-              <option value="Female">Cachorro</option>
-              <option value="Male">Gato</option>
+              <option selected defaultValue="none"></option>
+              <option value="Dog">Cachorro</option>
+              <option value="cat">Gato</option>
             </Select>
           </Labels>
           <Labels>
             Gênero:
             <Select name="genero" required>
-              <option selected value="none"></option>
+              <option selected defaultValue="none"></option>
               <option value="Female">Fêmea</option>
               <option value="Male">Macho</option>
             </Select>
@@ -63,11 +93,12 @@ export default function ProtectedPage() {
             className="photoPet"
             placeholder="Link da foto do seu pet"
             type="text"
-            name="raca"
+            name="foto"
           />
         </Labels>
         <Button type="submit">Cadastrar</Button>
       </Form>
+      <div>{state}</div>
     </>
   );
 }
@@ -120,4 +151,6 @@ const Button = styled.button`
   background-color: white;
   border-radius: 4px;
   border-color: #5582fa;
+  padding: 5px 30px;
+  font-size: 17px;
 `;
