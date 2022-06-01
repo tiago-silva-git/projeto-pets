@@ -22,16 +22,16 @@ const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   font-family: sans-serif;
-  color: #5582fa;
+  color: #a85c00;
 `;
 
 const Button = styled.button`
   display: flex;
   margin-left: auto;
-  color: #5582fa;
+  color: #a85c00;
   font-size: 17px;
   background-color: white;
   border-radius: 4px;
-  border-color: #5582fa;
+  border-color: #a85c00;
   padding: 5px 30px;
 `;

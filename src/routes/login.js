@@ -27,17 +27,17 @@ export default function Login() {
   return (
     <div>
       <Title>ENTRAR</Title>
-      <form onSubmit={handleSubmit}>
-        <Fields>
-          E-mail:
-          <input type="email" name="email" />
-        </Fields>
-        <Fields>
-          Senha:
-          <input type="password" name="password" />
-        </Fields>
-        <button type="submit">Login</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Labels>
+          E-mail
+          <Fields type="email" name="email" />
+        </Labels>
+        <Labels>
+          Senha
+          <Fields type="password" name="password" />
+        </Labels>
+        <Button type="submit">Login</Button>
+      </Form>
     </div>
   );
 }
@@ -45,10 +45,37 @@ export default function Login() {
 const Title = styled.h3`
   margin: 5px;
   font-size: 18px;
-  color: #1ddbcf;
+  color: #a85c00;
 `;
 
-const Fields = styled.label`
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #11adf5;
+  padding: 10px;
+  border-radius: 5px;
+  width: 450px;
+  justify-content: center;
+  color: white;
+`;
+
+const Labels = styled.label`
   display: block;
   margin: 10px;
+`;
+
+const Button = styled.button`
+  color: #a85c00;
+  background-color: white;
+  border-radius: 4px;
+  border-color: #a85c00;
+  padding: 5px 30px;
+  font-size: 17px;
+`;
+
+const Fields = styled.input`
+  width: 343px;
+  height: 25px;
+  margin-left: 5px;
 `;

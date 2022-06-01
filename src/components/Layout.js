@@ -39,7 +39,7 @@ const Links = styled.li`
   display: block;
   margin: 5px auto;
   padding: 5px;
-  background-color: #1ddbcf;
+  background-color: #a8bbc4;
   border-radius: 5px;
   width: 300px;
   box-shadow: 2px 1px 1px black;
