@@ -26,7 +26,7 @@ export default function ListingPets() {
     };
 
     request();
-  }, []);
+  }, [state]);
 
   return <div>{state}</div>;
 }

@@ -23,6 +23,7 @@ export default function ProtectedPage() {
     };
 
     const request = async () => await postPets(dataRegister);
+
     request();
   };
 
